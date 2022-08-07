@@ -1,4 +1,5 @@
 #include "object.hpp"
+#include <string>
 
 
 void Object::setDest(int x, int y, int w, int h) {
@@ -18,8 +19,8 @@ void Object::setSource(int x, int y, int w, int h) {
 }
 
 
-void Object::setImage(const char fileName[], SDL_Renderer *ren) {
+void Object::setImage(std::string fileName, SDL_Renderer *ren) {
 
-    SDL_Surface *surf = IMG_Load(fileName);
+    SDL_Surface *surf = IMG_Load(fileName.c_str());
     tex = SDL_CreateTextureFromSurface(ren, surf);
 }

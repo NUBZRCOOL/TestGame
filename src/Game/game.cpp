@@ -1,4 +1,5 @@
 #include "game.hpp"
+#include <iostream>
 #include <SDL2/SDL.h>
 
 
@@ -13,9 +14,9 @@ Game::Game() {
     count = 0;
 
 
-    ball.setDest(10, 10, 10, 10);
-    ball.setSource(10, 10, 10, 10);
-    ball.setImage("../assets/snowball.png", ren);
+    ball.setImage("snowball.png", ren);
+    ball.setDest(100, 100, 100, 100);
+    ball.setSource(100, 100, 100, 100);
 
 
     loop();
@@ -61,13 +62,13 @@ void Game::loop() {
 
 void Game::Render() {
 
-    // SDL_SetRenderDrawColor(ren, 255, 0, 0, 255);
-    // SDL_Rect rect;
-    // rect.x = rect.y = 100;
-    // rect.w = 200;
-    // rect.h = 100;
+    SDL_SetRenderDrawColor(ren, 255, 0, 0, 255);
+    SDL_Rect rect;
+    rect.x = rect.y = 100;
+    rect.w = 200;
+    rect.h = 100;
 
-    // SDL_RenderFillRect(ren, &rect);
+    SDL_RenderFillRect(ren, &rect);
 
     
     Draw(ball);

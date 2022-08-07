@@ -25,7 +25,7 @@ class Object {
 
         void setDest(int x, int y, int w, int h);
         void setSource(int x, int y, int w, int h);
-        void setImage(const char fileName[], SDL_Renderer *ren);
+        void setImage(std::string fileName, SDL_Renderer *ren);
 };
 
 
